@@ -36,12 +36,11 @@ export const useHomeFetch = () =>{
         }
     }
 
+    // Initial fetch and search
     useEffect(()=>{
-        fetchMovies(1);
-    },[]); // empty array to run once!!!
-    useEffect(()=>{
-        fetchMovies(2);
-    },[]); // empty array to run once!!!
+        setState(initialState);
+        fetchMovies(1, searchTerm);
+    },[searchTerm]); // empty array to run once!!!
 
     return {state, loading, error, setSearchTerm};
 };
