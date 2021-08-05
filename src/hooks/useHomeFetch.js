@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect} from 'react';
 // API
 import API from '../API';
 
@@ -14,6 +14,9 @@ export const useHomeFetch = () =>{
     const [state, setState] = useState(initialState);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    console.log(searchTerm);
 
     const fetchMovies = async (page, searchTerm='') => {
         try{
@@ -40,5 +43,5 @@ export const useHomeFetch = () =>{
         fetchMovies(2);
     },[]); // empty array to run once!!!
 
-    return {state, loading, error};
+    return {state, loading, error, setSearchTerm};
 };
