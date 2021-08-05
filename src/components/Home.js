@@ -15,7 +15,7 @@ import {useHomeFetch} from '../hooks/useHomeFetch'
 
 // Images
 import NoImage from '../images/no_image.jpg';
-
+ 
 const Home = () =>{
     
     const {state, loading, error, setSearchTerm} = useHomeFetch();
