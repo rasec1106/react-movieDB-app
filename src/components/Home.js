@@ -21,10 +21,11 @@ import NoImage from '../images/no_image.jpg';
 const Home = () =>{
     
     const {state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore} = useHomeFetch();
-    console.log(state, loading, error);
+
     return (
         // (<> </>) => fragment to encapsulate all that we are returning 
         <> 
+        {error && console.log(error)}
         { !searchTerm && state.results[0] ? (
                 <HeroImage 
                 image = {`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
