@@ -17,14 +17,11 @@ export const useHomeFetch = () =>{
     const [searchTerm, setSearchTerm] = useState('');
     const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-    console.log(searchTerm);
-
     const fetchMovies = async (page, searchTerm='') => {
         try{
             setError(false);
             setLoading(true);
             const movies = await API.fetchMovies(searchTerm, page);
-            console.log(movies);
 
             setState(prev => ({
                 ...movies,      //spread operator for destructuring the object
